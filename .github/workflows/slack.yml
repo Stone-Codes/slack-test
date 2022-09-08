@@ -17,4 +17,8 @@ jobs:
         with:
           token: ${{ secrets.SLACK_TOKEN }}
           path: report.zip
+          filename: Whateverreport.zip
+          filetype: zip
+          title: E2E Test results
+          initial_comment: Tests were successfull, here is the report
           channel: gh-actions
