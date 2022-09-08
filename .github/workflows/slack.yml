@@ -16,5 +16,5 @@ jobs:
         uses: adrey/slack-file-upload-action@master
         with:
           token: ${{ secrets.SLACK_TOKEN }}
-          path: report.zup
-          channel: random
+          path: report.zip
+          channel: gh-actions
