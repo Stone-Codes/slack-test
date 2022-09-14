@@ -6,19 +6,21 @@ jobs:
     runs-on: ubuntu-latest
     name: Upload test file
     steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - run: mkdir upload
-      - run: echo "Test file " > upload/test.txt
-      - run: echo "Test file " > upload/test2.txt
-      - run: zip -r report.zip upload
-      - name: Upload to slack step
-        uses: adrey/slack-file-upload-action@master
-        with:
-          token: ${{ secrets.SLACK_TOKEN }}
-          path: report.zip
-          filename: Whateverreport.zip
-          filetype: zip
-          title: E2E Test results
-          initial_comment: Tests were successfull, here is the report
-          channel: gh-actions
+      - name: Test curl
+        run: curl https://google.de
+#      - name: Checkout
+#        uses: actions/checkout@v1
+ #     - run: mkdir upload
+  #    - run: echo "Test file " > upload/test.txt
+  #    - run: echo "Test file " > upload/test2.txt
+  #    - run: zip -r report.zip upload
+  #    - name: Upload to slack step
+  #      uses: adrey/slack-file-upload-action@master
+  #      with:
+  #        token: ${{ secrets.SLACK_TOKEN }}
+  #        path: report.zip
+  #        filename: Whateverreport.zip
+  #        filetype: zip
+  #        title: E2E Test results
+  #        initial_comment: Tests were successfull, here is the report
+  #        channel: gh-actions
